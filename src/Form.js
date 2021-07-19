@@ -1,4 +1,5 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
+import { Input } from 'semantic-ui-react'
   
 class Form extends Component{
   constructor(props){
@@ -36,17 +37,19 @@ class Form extends Component{
         </div>
         <div>
           <label htmlFor='type'>Type</label>
-          <input
-            name='type' 
-            placeholder='Type (Ex: Italian,Greek,etc.)'
+          <Input
+            label={{ basic: true, content: 'kg' }}
+            labelPosition='right'
+            placeholder='Type (Ex: Italian, Greek, etc.)'
             value={this.state.type}
             onChange={this.handleChange}
           />
         </div>
         <div>
           <label htmlFor='fats'>Fats</label>
-          <input
-            name='fats' 
+          <Input
+            label={{ basic: true, content: 'kg' }}
+            labelPosition='right'
             placeholder='Fats (in grams)'
             value={this.state.fats}
             onChange={this.handleChange}

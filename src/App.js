@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { Input, Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
+// this is the url to semantic ui https://react.semantic-ui.com/
 
   
 //Functional component
@@ -79,7 +82,7 @@ class App extends React.Component{
 
   render() {
     return (
-        <div className="container jumbotron ">
+        <div style={{ margin: '25px' }} className="container jumbotron ">
             <form onSubmit={this.handleSubmit}>
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
@@ -89,12 +92,12 @@ class App extends React.Component{
                             Type{" "}
                         </span>
                     </div>
-                    <input type="text" className="form-control" 
-                           placeholder="Enter type of recipe you want to make"
-                           aria-label="type"
-                           aria-describedby="basic-addon1"
-                           value={this.state.type} name="type"
-                           onChange={this.handleInput} />
+                    <Input
+                      placeholder='Type (Ex: Italian, Greek, etc.)'
+                      value={this.state.type}
+                      onChange={this.handleInput}
+                      style={{ width: '25vw', margin: '15px' }}
+                    />
                 </div>
 
                 <div className="input-group mb-3">
@@ -103,12 +106,14 @@ class App extends React.Component{
                            Fats
                         </span>
                     </div>
-                    <textarea className="form-control " 
-                              aria-label="With textarea"
-                              placeholder="Enter how many grams of fat you want" 
-                              value={this.state.fats} name="fats" 
-                              onChange={this.handleInput}>
-                    </textarea>
+                    <Input
+                      label={{ basic: true, content: 'g' }}
+                      labelPosition='right'
+                      placeholder='Desired fat content'
+                      value={this.state.fats}
+                      onChange={this.handleInput}
+                      style={{ width: '25vw', margin: '15px' }}
+                    />
                 </div>
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
@@ -116,12 +121,14 @@ class App extends React.Component{
                            Protein
                         </span>
                     </div>
-                    <textarea className="form-control " 
-                              aria-label="With textarea"
-                              placeholder="Enter how many grams of protein you want" 
-                              value={this.state.proteins} name="proteins" 
-                              onChange={this.handleInput}>
-                    </textarea>
+                    <Input
+                      label={{ basic: true, content: 'g' }}
+                      labelPosition='right'
+                      placeholder='Desired protein content'
+                      value={this.state.proteins}
+                      onChange={this.handleInput}
+                      style={{ width: '25vw', margin: '15px' }}
+                    />
                 </div>
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
@@ -129,17 +136,16 @@ class App extends React.Component{
                            Carbs
                         </span>
                     </div>
-                    <textarea className="form-control " 
-                              aria-label="With textarea"
-                              placeholder="Enter how many grams of carbs you want" 
-                              value={this.state.carbs} name="carbs" 
-                              onChange={this.handleInput}>
-                    </textarea>
+                    <Input
+                      label={{ basic: true, content: 'g' }}
+                      labelPosition='right'
+                      placeholder='Desired carb content'
+                      value={this.state.carbs}
+                      onChange={this.handleInput}
+                      style={{ width: '25vw', margin: '15px' }}
+                    />
                 </div>
-
-                <button type="submit" className="btn btn-primary mb-5">
-                    Submit
-                </button>
+                <Button primary style={{ margin: '15px' }}>Submit</Button>
             </form>
 
             <hr
